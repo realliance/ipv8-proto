@@ -9,8 +9,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "82efa3b0ab5e7e32b786334b052560ec0094135f906975d7481651b9ecf31a6a"
 
 [[package]]
+name = "capnpc"
+version = "0.14.9"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bdc9f1dc84666d4ff007b1a16c8f97db80764a624625979be05d869bcff43aaa"
+dependencies = [
+ "capnp",
+]
+
+[[package]]
 name = "ipv8-proto-rust"
 version = "0.1.0"
 dependencies = [
  "capnp",
+ "capnpc",
 ]

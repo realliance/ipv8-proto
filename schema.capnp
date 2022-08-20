@@ -1,26 +1,13 @@
-@0xd1846fd7410b7a82;
+@0x84214bd6f091a132;
 
-struct Person {
-  name @0 :Text;
-  birthdate @3 :Date;
-
-  email @1 :Text;
-  phones @2 :List(PhoneNumber);
-
-  struct PhoneNumber {
-    number @0 :Text;
-    type @1 :Type;
-
-    enum Type {
-      mobile @0;
-      home @1;
-      work @2;
-    }
-  }
+struct User {
+  id @0 :Text;
+  authToken @1 :Text;
+  name @2 :Text;
+  username @3 :Text;
+  licensed @4 :Bool;
 }
 
-struct Date {
-  year @0 :Int16;
-  month @1 :UInt8;
-  day @2 :UInt8;
+interface UserAuth {
+  getUser @0 (auth_token :Text) -> (user :User);
 }
